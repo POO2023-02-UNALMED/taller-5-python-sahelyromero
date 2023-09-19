@@ -50,7 +50,7 @@ class Ave(Animal):
         return Halcon
     
     @classmethod
-    def cearAguila(cls, nombre, edad, genero):
+    def crearAguila(cls, nombre, edad, genero):
         Aguila = Ave(nombre, edad, "montanas", genero, "blanco y amarillo")
         Ave.aguilas += 1
         return Aguila

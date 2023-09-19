@@ -1,13 +1,63 @@
-from animal import Animal
+from zooAnimales.animal import Animal
 
 class Mamifero(Animal):
 
-    listado = []
+    _listado = []
     caballos = 0
     leones = 0
 
-    def __init__(nombre = None, edad = 0, habitat = None, genero = None, zona = None, pelaje = False, patas = 0):
-        super().__init__(nombre,edad,habitat,genero,zona)
+    def __init__(self, nombre = None, edad = 0, habitat = None, genero = None, pelaje = False, patas = 0):
         
-        self.pelaje = pelaje
-        self.patas = patas
+        super().__init__(nombre,edad,habitat,genero,None)
+        
+        self._pelaje = pelaje
+        self._patas = patas
+        Mamifero._listado.append(self)
+
+    def getPelaje(self):
+        return self._pelaje
+    
+    def setPelaje(self, color):
+        self._pelaje = color
+
+    def getPatas(self):
+        return self._patas
+    
+    def setPatas(self, color):
+        self._patas = color
+
+    @classmethod
+    def getListado(cls):
+        return Mamifero._listado
+    
+    @classmethod
+    def setListado(cls, listado):
+        Mamifero._listado = listado
+
+    @classmethod
+    def getCaballos(cls):
+        return Mamifero.caballos
+    
+    @classmethod
+    def setCaballos(cls, listado):
+        Mamifero.caballos = listado
+
+    @classmethod
+    def getLeones(cls, listado):
+        Mamifero.leones = listado
+
+    @classmethod
+    def setLeones(cls, listado):
+        Mamifero.leones = listado
+    
+    @classmethod
+    def crearCaballo(cls, nombre, edad, genero):
+        caballo = Mamifero(nombre, edad, "pradera", genero, True, 4)
+        Mamifero.caballos += 1
+        return caballo
+    
+    @classmethod
+    def crearLeon(cls, nombre, edad, genero):
+        Leon = Mamifero(nombre, edad, "selva", genero, True, 4)
+        Mamifero.leones += 1
+        return Leon

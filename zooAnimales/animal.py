@@ -3,8 +3,8 @@ from zooAnimales.ave import Ave
 from zooAnimales.pez import Pez
 from zooAnimales.reptil import Reptil
 from zooAnimales.anfibio import Anfibio
-from gestion import zona
-from gestion import zoologico
+from gestion.zona import Zona
+from gestion.zoologico import Zoologico
 
 class Animal():
 
@@ -20,7 +20,7 @@ class Animal():
         self._habitat = habitat
         self._genero = genero
         self._zona = zona 
-        Animal._totalAnimalestotalAnimales += 1
+        Animal._totalAnimales += 1
 
     def getNombre(self):
         return self._nombre
@@ -79,7 +79,7 @@ class Animal():
 
         if len(self._zona) != 0:
 
-            return (f"Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} y mi genero es {self._genero} la zona en la que me ubico es {self._zona(0)}, en el {self._zona(0).getZoo()}")
+            return (f"Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} y mi genero es {self._genero} la zona en la que me ubico es {self._zona[0]}, en el {self._zona[0].getZoo()}")
         
         else:
 
