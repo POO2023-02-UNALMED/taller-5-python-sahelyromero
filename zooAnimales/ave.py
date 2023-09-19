@@ -6,9 +6,9 @@ class Ave(Animal):
     halcones = 0
     aguilas = 0
 
-    def __init__(self, nombre = None, edad = 0, habitat = None, genero = None, zona = None, colorPlumas = None):
+    def __init__(self, nombre = None, edad = 0, habitat = None, genero = None, colorPlumas = None):
 
-        super().__init__(self, nombre, edad, habitat, genero, zona)
+        super().__init__(self, nombre, edad, habitat, genero, None)
 
         self._colorPlumas = colorPlumas
         Ave._listado.append(self)
@@ -42,3 +42,15 @@ class Ave(Animal):
     @classmethod
     def setRanas(cls, listado):
         Ave.aguilas = listado
+
+    @classmethod
+    def crearHalcon(cls, nombre, edad, genero):
+        Halcon = Ave(nombre, edad, "montanas", genero, "cafe glorioso")
+        Ave.halcones += 1
+        return Halcon
+    
+    @classmethod
+    def cearAguila(cls, nombre, edad, genero):
+        Aguila = Ave(nombre, edad, "montanas", genero, "blanco y amarillo")
+        Ave.aguilas += 1
+        return Aguila
