@@ -1,4 +1,4 @@
-from animal import Animal
+from .animal import Animal
 
 class Ave(Animal):
 
@@ -6,9 +6,9 @@ class Ave(Animal):
     halcones = 0
     aguilas = 0
 
-    def __init__(self, nombre = None, edad = 0, habitat = None, genero = None, colorPlumas = None):
+    def __init__(self, nombre, edad, habitat, genero, colorPlumas):
 
-        super().__init__(self, nombre, edad, habitat, genero, None)
+        super().__init__(nombre, edad, habitat, genero)
 
         self._colorPlumas = colorPlumas
         Ave._listado.append(self)

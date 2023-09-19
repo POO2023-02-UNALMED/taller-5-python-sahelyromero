@@ -1,4 +1,4 @@
-from animal import Animal
+from .animal import Animal
 
 class Reptil(Animal):
 
@@ -6,9 +6,9 @@ class Reptil(Animal):
     iguanas = 0
     serpientes = 0
 
-    def __init__(self, nombre = None, edad = 0, habitat = None, genero = None, colorEscamas = None, largoCola = 0):
+    def __init__(self, nombre, edad, habitat, genero, colorEscamas, largoCola):
 
-        super().__init__(self, nombre, edad, habitat, genero, None)
+        super().__init__(nombre, edad, habitat, genero)
 
         self._colorEscamas = colorEscamas
         self._largoCola = largoCola

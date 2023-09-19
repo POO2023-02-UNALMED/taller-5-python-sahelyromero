@@ -1,16 +1,10 @@
-from gestion.zoologico import Zoologico
-from zooAnimales.animal import Animal
-
 class Zona():
     
-    def __init__(self, nombre = None, zoo = None, animales = None):
-
-        if animales == None:
-            animales = []
+    def __init__(self, nombre = None, zoo = None):
 
         self._nombre = nombre
         self._zoo = zoo
-        self._animales = animales
+        self._animales = []
 
     def getAnimales(self):
         return self._animales
