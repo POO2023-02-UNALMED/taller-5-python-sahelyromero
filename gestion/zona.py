@@ -29,3 +29,9 @@ class Zona():
     
     def setNombre(self, nombre):
         self._nombre = nombre
+    
+    def agregarAnimales(self, animal):
+        self._animales.append(animal)
+    
+    def cantidadAnimales(self):
+        return len(self._animales)
