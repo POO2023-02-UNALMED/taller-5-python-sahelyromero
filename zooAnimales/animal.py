@@ -68,7 +68,7 @@ class Animal():
         totalpeces = len(Pez.getListado())
         totalanfibios = len(Anfibio.getListado())
 
-        return (f"Mamiferos: {totalmamiferos}\nAves: {totalaves}\nReptiles: {totalreptiles}\nPeces: {totalpeces}\nAnfibios: {totalanfibios}")
+        return (f"Mamiferos : {totalmamiferos}\nAves : {totalaves}\nReptiles : {totalreptiles}\nPeces : {totalpeces}\nAnfibios : {totalanfibios}")
     
     def toString(self):
 
